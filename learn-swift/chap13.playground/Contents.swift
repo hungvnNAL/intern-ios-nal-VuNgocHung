@@ -4,31 +4,31 @@ import UIKit
 struct MovieList {
     var name: String
     var movies: [String]
-
+    
     init(name: String, movies: [String]) {
-            self.name = name
-            self.movies = movies
-        }
+        self.name = name
+        self.movies = movies
+    }
     func printMovies() {
-            print("Movies in \(name):")
-            for movie in movies {
-                print(movie)
-            }
+        print("Movies in \(name):")
+        for movie in movies {
+            print(movie)
         }
+    }
 }
 struct Movie {
     var title: String
 }
 class User {
     var lists: [String: MovieList] = [:]
-        
-        func addList(_ list: MovieList) {
-            lists[list.name] = list
-        }
-        
-        func list(forName name: String) -> MovieList? {
-            return lists[name]
-        }
+    
+    func addList(_ list: MovieList) {
+        lists[list.name] = list
+    }
+    
+    func list(forName name: String) -> MovieList? {
+        return lists[name]
+    }
 }
 
 // Create users
@@ -55,7 +55,7 @@ struct Tshirt {
     let size: String
     let color: String
     let price: Double
-
+    
 }
 struct UserforTshirt {
     let name: String
@@ -79,10 +79,10 @@ class ShoppingCart {
     }
     func totalPrice()-> Double{
         var totalCost = 0.0
-                for Tshirt in order {
-                    totalCost += Tshirt.price
-                }
-                return totalCost
+        for Tshirt in order {
+            totalCost += Tshirt.price
+        }
+        return totalCost
     }
 }
 // Create a T-shirt

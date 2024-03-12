@@ -26,36 +26,36 @@ struct SimpleDate{
     var month: String
     var day: Int
     mutating func advance() {
-           guard let monthIndex = months.firstIndex(of: month) else {
-               return
-           }
-           if month == "December" && day == 31 {
-               month = "January"
-               day = 1
-           } else if day == daysInMonth(month: month) { // Check if it's the last day of the month
-               // Move to the next month
-               month = months[(monthIndex + 1) % 12]
-               day = 1
-           } else {
-               // Just increment the day
-               day += 1
-           }
-       }
-       
-       // Function to get the number of days in a month
-       func daysInMonth(month: String) -> Int {
-           switch month {
-           case "January", "March", "May", "July", "August", "October", "December":
-               return 31
-           case "April", "June", "September", "November":
-               return 30
-           case "February":
-               return 28
-           default:
-               return 0
-           }
-       }
-   }
+        guard let monthIndex = months.firstIndex(of: month) else {
+            return
+        }
+        if month == "December" && day == 31 {
+            month = "January"
+            day = 1
+        } else if day == daysInMonth(month: month) { // Check if it's the last day of the month
+            // Move to the next month
+            month = months[(monthIndex + 1) % 12]
+            day = 1
+        } else {
+            // Just increment the day
+            day += 1
+        }
+    }
+    
+    // Function to get the number of days in a month
+    func daysInMonth(month: String) -> Int {
+        switch month {
+        case "January", "March", "May", "July", "August", "October", "December":
+            return 31
+        case "April", "June", "September", "November":
+            return 30
+        case "February":
+            return 28
+        default:
+            return 0
+        }
+    }
+}
 
 var date = SimpleDate(month: "December", day: 31)
 date.advance()
