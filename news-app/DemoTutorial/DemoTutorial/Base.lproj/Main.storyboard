@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="View from swift left" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RrD-eV-cNb">
-                                <rect key="frame" x="20" y="146" width="342" height="193"/>
+                                <rect key="frame" x="20" y="146" width="342" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDS-55-Sfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="634"/>
+            <point key="canvasLocation" x="-886.95652173913049" y="627.71739130434787"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h3S-aT-C70">
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDy-MB-Ovm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1129" y="618"/>
+            <point key="canvasLocation" x="-261" y="628"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0hJ-jS-The">
@@ -144,8 +144,8 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-dj-hRq">
-                                                            <rect key="frame" x="301.66666666666669" y="0.0" width="81" height="60"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-dj-hRq">
+                                                            <rect key="frame" x="301.66666666666669" y="-0.33333333333333215" width="81" height="59.666666666666657"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="81" id="Res-Uc-b7O"/>
                                                             </constraints>
@@ -188,8 +188,8 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCJ-hi-e3h">
-                                                            <rect key="frame" x="301.66666666666669" y="0.0" width="81" height="60"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NCJ-hi-e3h">
+                                                            <rect key="frame" x="301.66666666666669" y="-0.33333333333333215" width="81" height="59.666666666666657"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="81" id="6hH-hh-D3A"/>
                                                             </constraints>
@@ -232,8 +232,8 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qr-8T-Byt">
-                                                            <rect key="frame" x="301.66666666666669" y="0.0" width="81" height="60"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4qr-8T-Byt">
+                                                            <rect key="frame" x="301.66666666666669" y="1" width="81" height="58.666666666666671"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="81" id="Dq7-Au-LrR"/>
                                                             </constraints>
@@ -257,7 +257,7 @@
                             <outlet property="delegate" destination="fus-vb-hVx" id="6dd-3E-hF5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Player" id="oOF-4d-h16">
+                    <navigationItem key="navigationItem" title="Player" leftItemsSupplementBackButton="YES" id="oOF-4d-h16">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AWS-6G-phw">
                             <connections>
                                 <segue destination="3YQ-eS-eEl" kind="show" id="yDU-DM-9uU"/>
@@ -272,7 +272,6 @@
         <!--Add Player-->
         <scene sceneID="BK6-Dj-hYF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1HN-Ue-XuH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Ofn-cI-KsX" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="4P4-XV-ewV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -341,6 +340,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="0Iw-ty-5IL"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1HN-Ue-XuH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2257.971014492754" y="-850.27173913043487"/>
         </scene>
@@ -473,6 +473,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

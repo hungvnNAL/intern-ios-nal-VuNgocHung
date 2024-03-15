@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F9BD23E52BA17F92008A8BD4 /* home_topNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD23E32BA17F92008A8BD4 /* home_topNewsViewController.swift */; };
-		F9BD23E62BA17F92008A8BD4 /* home_topNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BD23E42BA17F92008A8BD4 /* home_topNewsViewController.xib */; };
 		F9EB43432B9702C300122A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB43422B9702C300122A2A /* AppDelegate.swift */; };
 		F9EB43452B9702C300122A2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB43442B9702C300122A2A /* SceneDelegate.swift */; };
 		F9EB43472B9702C300122A2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB43462B9702C300122A2A /* ViewController.swift */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		F9BD23E32BA17F92008A8BD4 /* home_topNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home_topNewsViewController.swift; sourceTree = "<group>"; };
-		F9BD23E42BA17F92008A8BD4 /* home_topNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = home_topNewsViewController.xib; sourceTree = "<group>"; };
 		F9EB433F2B9702C300122A2A /* news-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "news-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EB43422B9702C300122A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9EB43442B9702C300122A2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				F9EB434D2B9702C400122A2A /* LaunchScreen.storyboard */,
 				F9EB43502B9702C400122A2A /* Info.plist */,
 				F9BD23E32BA17F92008A8BD4 /* home_topNewsViewController.swift */,
-				F9BD23E42BA17F92008A8BD4 /* home_topNewsViewController.xib */,
 			);
 			path = "news-app";
 			sourceTree = "<group>";
@@ -132,7 +129,6 @@
 			files = (
 				F9EB434F2B9702C400122A2A /* LaunchScreen.storyboard in Resources */,
 				F9EB434C2B9702C400122A2A /* Assets.xcassets in Resources */,
-				F9BD23E62BA17F92008A8BD4 /* home_topNewsViewController.xib in Resources */,
 				F9EB434A2B9702C300122A2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
