@@ -55,6 +55,8 @@ class ViewController: UIViewController {
     
     @IBAction func passwordEditting(_ sender: Any) {
         passwordLabel.isHidden = false
+        passwordTextField.enablePasswordToggle()
+        
         signupButton.isEnabled = true
         signupButton.layer.cornerRadius = 15
         signupButton.layer.borderColor = UIColor.black.cgColor
@@ -68,16 +70,12 @@ class ViewController: UIViewController {
         if isValidEmail(emailText){
             print("email is valid")
             
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "home_topNewsViewController") as! home_topNewsViewController
-            self.navigationController?.pushViewController(vc, animated: true)
         }
         else
         {
             print("email is not valid")
             showAlert(title: "Error", message: "Check your email is not valid")
         }
-        
         
     }
     
@@ -90,7 +88,6 @@ class ViewController: UIViewController {
         emailLabel.isHidden = true
         passwordLabel.isHidden = true
         
-        passwordTextField.enablePasswordToggle()
         
         signupButton.isEnabled = false
         signupButton.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
