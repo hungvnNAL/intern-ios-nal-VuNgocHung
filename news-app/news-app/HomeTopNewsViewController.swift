@@ -7,10 +7,13 @@
 
 import UIKit
 
-class HometopnewsViewController: UIViewController {
+class HomeTopNewsViewController: UIViewController {
 
+    let identifier = "HometopnewsViewController"
+    
     @IBOutlet weak var containerCollectionView: UICollectionView!
     
+    @IBOutlet weak var postlistTableView: UITableView!
     let nib = UINib(nibName: "ContainerCollectionViewCell", bundle: .main)
     let container: [String] = ["For you", "Top", "World", "Politics"]
     override func viewDidLoad() {
@@ -20,11 +23,15 @@ class HometopnewsViewController: UIViewController {
         containerCollectionView.dataSource = self
         
         containerCollectionView.register(nib, forCellWithReuseIdentifier: "Cell")
+        
+        postlistTableView.delegate = self
+        postlistTableView.dataSource = self
+        postlistTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
 
 }
-extension HometopnewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeTopNewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return container.count
         
@@ -38,6 +45,23 @@ extension HometopnewsViewController: UICollectionViewDelegate, UICollectionViewD
         cell.layer.borderColor = UIColor.black.cgColor
 
         cell.titleLabel.text = container[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           
+        }
+    
+    
+}
+extension HomeTopNewsViewController:UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = postlistTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = UIColor.systemPink
         return cell
     }
     

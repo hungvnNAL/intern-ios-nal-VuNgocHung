@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-        
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -42,10 +42,10 @@ class ViewController: UIViewController {
     
     func showAlert(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
-
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
+        
         self.present(alert, animated: true, completion: nil)
-        }
+    }
     
     
     @IBAction func labelemailShowup(_ sender: UITextField) {
@@ -71,6 +71,11 @@ class ViewController: UIViewController {
         if isValidEmail(emailText){
             print("email is valid")
             
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) // Make sure to use your actual storyboard name
+            let hometopnewsVC = storyboard.instantiateViewController(withIdentifier: "HometopnewsViewController") as! HomeTopNewsViewController
+            // Push the HometopnewsViewController onto the navigation stack
+            present(hometopnewsVC, animated: true, completion: nil)
         }
         else
         {
@@ -86,10 +91,11 @@ class ViewController: UIViewController {
         
         singleLine(textField: emailTextField)
         singleLine(textField: passwordTextField)
-    
+        
         emailLabel.isHidden = true
         passwordLabel.isHidden = true
-    
+        passwordTextField.textContentType = .oneTimeCode
+        
         
         signupButton.isEnabled = false
         signupButton.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
@@ -100,27 +106,27 @@ class ViewController: UIViewController {
 }
 
 extension UITextField {
-fileprivate func setPasswordToggleImage(_ button: UIButton) {
-    if(isSecureTextEntry){
-        button.setImage(UIImage(named: "ic_password_invisible"), for: .normal)
-    }else{
-        button.setImage(UIImage(named: "ic_password_visible"), for: .normal)
-
+    fileprivate func setPasswordToggleImage(_ button: UIButton) {
+        if(isSecureTextEntry){
+            button.setImage(UIImage(named: "ic_password_invisible"), for: .normal)
+        }else{
+            button.setImage(UIImage(named: "ic_password_visible"), for: .normal)
+            
+        }
     }
-}
-
-func enablePasswordToggle(){
-    let button = UIButton(type: .custom)
-    setPasswordToggleImage(button)
-    button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
-    button.frame = CGRect(x: CGFloat(self.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
-    button.addTarget(self, action: #selector(self.togglePasswordView), for: .touchUpInside)
-    self.rightView = button
-    self.rightViewMode = .always
-}
-@IBAction func togglePasswordView(_ sender: Any) {
-    self.isSecureTextEntry = !self.isSecureTextEntry
-    setPasswordToggleImage(sender as! UIButton)
-}
-
+    
+    func enablePasswordToggle(){
+        let button = UIButton(type: .custom)
+        setPasswordToggleImage(button)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        button.frame = CGRect(x: CGFloat(self.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        button.addTarget(self, action: #selector(self.togglePasswordView), for: .touchUpInside)
+        self.rightView = button
+        self.rightViewMode = .always
+    }
+    @IBAction func togglePasswordView(_ sender: Any) {
+        self.isSecureTextEntry = !self.isSecureTextEntry
+        setPasswordToggleImage(sender as! UIButton)
+    }
+    
 }
