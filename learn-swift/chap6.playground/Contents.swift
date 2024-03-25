@@ -23,8 +23,15 @@ let res = dive(10, by: 2)
 let num: Int??? = 10
 print(num!!!)
 func usequard (_ numb: Int???){
-    guard let unwrap1 = numb, let unwrap2 = unwrap1, let unwrap3 = unwrap2 else {return}
-    print(unwrap3)
+//    guard let unwrap1 = numb, let unwrap2 = unwrap1, let unwrap3 = unwrap2 else {
+//        return
+//    }
+//    print(unwrap3)
+    if let unwrap1 = numb, let unwrap2 = unwrap1, let unwrap3 = unwrap2 {
+        unwrap1
+    }
+    
 }
 let numb : Int??? = 100
 usequard(numb)
+print()
