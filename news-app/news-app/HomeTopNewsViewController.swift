@@ -4,7 +4,7 @@
 //
 //  Created by hungvn on 3/19/24.
 //
-
+import Kingfisher
 import UIKit
 
 class HomeTopNewsViewController: UIViewController {
@@ -23,6 +23,8 @@ class HomeTopNewsViewController: UIViewController {
     
     var models: [Model] = []
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +38,7 @@ class HomeTopNewsViewController: UIViewController {
         postlistTableView.register(nibforTableViewCell, forCellReuseIdentifier: "cell")
         
         fetchDataAndUpdateUI()
+        
     }
     func fetchDataAndUpdateUI(){
         APICaller.shared.fetchData{ [weak self] result in
@@ -81,7 +84,7 @@ extension HomeTopNewsViewController: UICollectionViewDelegate, UICollectionViewD
         itemSelected = indexPath
         containerCollectionView.reloadData()
     }
-
+    
     
     
 }
@@ -93,15 +96,15 @@ extension HomeTopNewsViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postlistTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostListsTableViewCell
         let model = models[indexPath.row]
-        cell.textLabel?.text = model.title
-        cell.authorLabel.text = "HungVu"
+        cell.titleLabel.text = model.title
+//        cell.authorLabel.text = ""
+        
+//        cell.timeLabel.text = model.pubDate
+        cell.ThumbnailImage.kf.setImage(with: model.imageUrl)
         
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
     }
     
 }
