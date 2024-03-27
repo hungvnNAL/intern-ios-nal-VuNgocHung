@@ -7,32 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
     @IBOutlet weak var emailLabel: UILabel!
-    
     @IBOutlet weak var passwordLabel: UILabel!
-    
     @IBOutlet weak var signupButton: UIButton!
-    
-    func singleLine(textField : UITextField) {
-        
-        let bottomLine = CALayer()
-        
-        bottomLine.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
-        
-        bottomLine.backgroundColor = CGColor.init(red: 144/255, green: 144/255, blue: 144/255, alpha: 1)
-        
-        textField.borderStyle = .none
-        
-        textField.layer.addSublayer(bottomLine)
-        
-    }
     
     func isValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -43,38 +23,29 @@ class ViewController: UIViewController {
     func showAlert(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
-        
         self.present(alert, animated: true, completion: nil)
     }
     
-    
     @IBAction func labelemailShowup(_ sender: UITextField) {
         emailLabel.isHidden = false
-        
     }
-    
     
     @IBAction func passwordEditting(_ sender: Any) {
         passwordLabel.isHidden = false
         passwordTextField.enablePasswordToggle()
-        
         signupButton.isEnabled = true
         signupButton.layer.cornerRadius = 15
-        signupButton.layer.borderColor = UIColor.black.cgColor
+        signupButton.layer.borderColor = Constant.borderColor
         signupButton.layer.backgroundColor = UIColor.black.cgColor
         signupButton.tintColor = .white
     }
-    
     
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         let emailText = emailTextField.text ?? ""
         if isValidEmail(emailText){
             print("email is valid")
-            
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil) // Make sure to use your actual storyboard name
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let hometopnewsVC = storyboard.instantiateViewController(withIdentifier: "HometopnewsViewController") as! HomeTopNewsViewController
-            // Push the HometopnewsViewController onto the navigation stack
             present(hometopnewsVC, animated: true, completion: nil)
         }
         else
@@ -82,26 +53,18 @@ class ViewController: UIViewController {
             print("email is not valid")
             showAlert(title: "Error", message: "Check your email is not valid")
         }
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        singleLine(textField: emailTextField)
-        singleLine(textField: passwordTextField)
-        
         emailLabel.isHidden = true
         passwordLabel.isHidden = true
-        passwordTextField.textContentType = .oneTimeCode
-        
-        
         signupButton.isEnabled = false
-        signupButton.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
+        signupButton.backgroundColor = Constant.colorGray
         signupButton.layer.cornerRadius = 15
-        signupButton.layer.borderColor = UIColor.black.cgColor
-        
+        signupButton.layer.borderColor = Constant.borderColor
+        emailTextField.useUnderline()
+        passwordTextField.useUnderline()
     }
 }
 
@@ -111,7 +74,6 @@ extension UITextField {
             button.setImage(UIImage(named: "ic_password_invisible"), for: .normal)
         }else{
             button.setImage(UIImage(named: "ic_password_visible"), for: .normal)
-            
         }
     }
     
@@ -128,5 +90,13 @@ extension UITextField {
         self.isSecureTextEntry = !self.isSecureTextEntry
         setPasswordToggleImage(sender as! UIButton)
     }
-    
+    func useUnderline() {
+        let border = CALayer()
+        let borderWidth = CGFloat(1.0)
+        border.borderColor = UIColor.lightGray.cgColor
+        border.frame = CGRect(origin: CGPoint(x: 0,y :self.frame.size.height - borderWidth), size: CGSize(width: self.frame.size.width, height: self.frame.size.height))
+        border.borderWidth = borderWidth
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
 }

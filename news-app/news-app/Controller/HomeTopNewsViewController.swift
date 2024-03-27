@@ -17,35 +17,29 @@ class HomeTopNewsViewController: UIViewController {
     let nib = UINib(nibName: "ContainerCollectionViewCell", bundle: .main)
     
     let nibforTableViewCell = UINib(nibName: "PostListsTableViewCell", bundle: .main)
-    
-    let container: [String] = ["For you ", "Top", "World", "Politics", "For you", "Top", "World", "Politics", "For you", "Top", "World", "Politics", "For you", "Top", "World", "Politics"]
+
     var itemSelected : IndexPath?
-    
-    var models: [Model] = []
-    
-    
+    var newsItems: [NewsItem] = []
+    let listCategories = categories
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        itemSelected = IndexPath(row: 0, section: 0)
         containerCollectionView.delegate = self
         containerCollectionView.dataSource = self
-        
         containerCollectionView.register(nib, forCellWithReuseIdentifier: "Cell")
-        
         postlistTableView.delegate = self
         postlistTableView.dataSource = self
         postlistTableView.register(nibforTableViewCell, forCellReuseIdentifier: "cell")
         
         fetchDataAndUpdateUI()
-        
     }
     func fetchDataAndUpdateUI(){
         APICaller.shared.fetchData{ [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let fetchModels):
-                    self?.models = fetchModels
+                    self?.newsItems = fetchModels
                     self?.postlistTableView.reloadData()
                 case .failure(let error):
                     print(error)
@@ -57,54 +51,45 @@ class HomeTopNewsViewController: UIViewController {
 }
 extension HomeTopNewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return container.count
-        
+        return listCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = containerCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContainerCollectionViewCell
-        
-        cell.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
+        cell.backgroundColor = Constant.colorGray
         cell.layer.cornerRadius = 15
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.titleLabel.text = container[indexPath.item]
-        
-        if indexPath == itemSelected {
+        cell.layer.borderColor = Constant.borderColor
+        cell.titleLabel.text = listCategories[indexPath.row].title
+        if indexPath.row == itemSelected?.row  {
             cell.backgroundColor = .black
             cell.titleLabel.textColor = .white
         } else {
-            cell.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)// Trở về màu mặc định cho các cell khác
+            cell.backgroundColor = Constant.colorGray
             cell.titleLabel.textColor = .black
         }
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         itemSelected = indexPath
+        APICaller.shared.indexLink = itemSelected 
+        fetchDataAndUpdateUI()
         containerCollectionView.reloadData()
     }
-    
-    
-    
 }
 extension HomeTopNewsViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return newsItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postlistTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostListsTableViewCell
-        let model = models[indexPath.row]
-        cell.titleLabel.text = model.title
-//        cell.authorLabel.text = ""
-        
-//        cell.timeLabel.text = model.pubDate
-        cell.ThumbnailImage.kf.setImage(with: model.imageUrl)
+        let news = newsItems[indexPath.row]
+        cell.titleLabel.text = news.title
+        cell.timeLabel.text = DateFormatter().convertStringDateFormat(dateString: news.pubDate)
+        cell.ThumbnailImage.kf.setImage(with: news.imageUrl)
         
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
-    
 }
+
