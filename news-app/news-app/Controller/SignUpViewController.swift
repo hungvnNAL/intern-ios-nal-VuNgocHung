@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var signInwithEmail: UIButton!
     
     func isValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -37,16 +38,13 @@ class SignUpViewController: UIViewController {
         signupButton.layer.cornerRadius = 15
         signupButton.layer.borderColor = Constant.borderColor
         signupButton.layer.backgroundColor = UIColor.black.cgColor
-        signupButton.tintColor = .white
+        signupButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         let emailText = emailTextField.text ?? ""
         if isValidEmail(emailText){
             print("email is valid")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let hometopnewsVC = storyboard.instantiateViewController(withIdentifier: "HometopnewsViewController") as! HomeTopNewsViewController
-            present(hometopnewsVC, animated: true, completion: nil)
         }
         else
         {
@@ -54,6 +52,11 @@ class SignUpViewController: UIViewController {
             showAlert(title: "Error", message: "Check your email is not valid")
         }
     }
+    
+    @IBAction func signInEmailTouch(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +68,13 @@ class SignUpViewController: UIViewController {
         signupButton.layer.borderColor = Constant.borderColor
         emailTextField.useUnderline()
         passwordTextField.useUnderline()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+
     }
 }
 
 extension UITextField {
-    fileprivate func setPasswordToggleImage(_ button: UIButton) {
+    func setPasswordToggleImage(_ button: UIButton) {
         if(isSecureTextEntry){
             button.setImage(UIImage(named: "ic_password_invisible"), for: .normal)
         }else{
@@ -89,14 +94,5 @@ extension UITextField {
     @IBAction func togglePasswordView(_ sender: Any) {
         self.isSecureTextEntry = !self.isSecureTextEntry
         setPasswordToggleImage(sender as! UIButton)
-    }
-    func useUnderline() {
-        let border = CALayer()
-        let borderWidth = CGFloat(1.0)
-        border.borderColor = UIColor.lightGray.cgColor
-        border.frame = CGRect(origin: CGPoint(x: 0,y :self.frame.size.height - borderWidth), size: CGSize(width: self.frame.size.width, height: self.frame.size.height))
-        border.borderWidth = borderWidth
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true
     }
 }

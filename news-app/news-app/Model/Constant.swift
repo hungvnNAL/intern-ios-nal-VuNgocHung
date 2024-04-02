@@ -10,4 +10,8 @@ import UIKit
 struct Constant {
     static let colorGray = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
     static let borderColor = UIColor.black.cgColor
+    
+   
+     static let URLvnexpress = "https://vnexpress.net/rss"
+     static let URLtuoitre = "https://tuoitre.vn/rss"
 }

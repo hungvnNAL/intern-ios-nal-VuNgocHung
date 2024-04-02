@@ -8,20 +8,21 @@ import Kingfisher
 import UIKit
 
 class HomeTopNewsViewController: UIViewController {
-    
     let identifier = "HometopnewsViewController"
-    
     @IBOutlet weak var containerCollectionView: UICollectionView!
-    
     @IBOutlet weak var postlistTableView: UITableView!
+    @IBOutlet weak var popoverButton: UIButton!
     let nib = UINib(nibName: "ContainerCollectionViewCell", bundle: .main)
-    
     let nibforTableViewCell = UINib(nibName: "PostListsTableViewCell", bundle: .main)
-
     var itemSelected : IndexPath?
     var newsItems: [NewsItem] = []
     let listCategories = categories
+    var selectedCateName: String?
+    var currentContainertitle: String? = "Trang Chủ"
     
+    @IBAction func popoverTouch(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         itemSelected = IndexPath(row: 0, section: 0)
@@ -31,9 +32,9 @@ class HomeTopNewsViewController: UIViewController {
         postlistTableView.delegate = self
         postlistTableView.dataSource = self
         postlistTableView.register(nibforTableViewCell, forCellReuseIdentifier: "cell")
-        
         fetchDataAndUpdateUI()
     }
+    
     func fetchDataAndUpdateUI(){
         APICaller.shared.fetchData{ [weak self] result in
             DispatchQueue.main.async {
@@ -49,6 +50,7 @@ class HomeTopNewsViewController: UIViewController {
     }
     
 }
+
 extension HomeTopNewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listCategories.count
@@ -72,11 +74,13 @@ extension HomeTopNewsViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         itemSelected = indexPath
-        APICaller.shared.indexLink = itemSelected 
+        APICaller.shared.indexLink = itemSelected
+        currentContainertitle = listCategories[indexPath.row].title
         fetchDataAndUpdateUI()
         containerCollectionView.reloadData()
     }
 }
+
 extension HomeTopNewsViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsItems.count
@@ -88,8 +92,13 @@ extension HomeTopNewsViewController:UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = news.title
         cell.timeLabel.text = DateFormatter().convertStringDateFormat(dateString: news.pubDate)
         cell.ThumbnailImage.kf.setImage(with: news.imageUrl)
-        
+        cell.containerLabel.textColor = .blue
+        cell.containerLabel.text = currentContainertitle
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(WebViewController(), animated: true)
     }
 }
 

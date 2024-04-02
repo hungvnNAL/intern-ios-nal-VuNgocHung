@@ -1,19 +1,23 @@
+
+
+
 import Foundation
 
 
-
-
 class APICaller {
-
     static let shared = APICaller()
-    
     var indexLink: IndexPath?
+    var rssURLString: String?
+    
+    enum link: String {
+        case vnexpress = "https://vnexpress.net/rss/"
+        case tuoitre = "https://tuoitre.vn/rss/"
+    }
     
     func fetchData(completion: @escaping (Result<[NewsItem], Error>) -> Void) {
-        let rssURLString = "https://vnexpress.net/rss/\(categories[indexLink?.row ?? 0].link).rss"
+        rssURLString = "\(link.tuoitre.rawValue)\(categories[indexLink?.row ?? 0].link).rss"
         
-        // Create a URL object from the URL string
-        guard let rssURL = URL(string: rssURLString) else {
+        guard let rssURL = URL(string: rssURLString ?? "") else {
             completion(.failure(NSError(domain: "InvalidURL", code: 0, userInfo: nil)))
             return
         }

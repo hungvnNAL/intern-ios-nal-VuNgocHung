@@ -1,0 +1,81 @@
+
+/* Class = "UIButton"; normalTitle = "Terms & Conditions"; ObjectID = "18u-Zx-c8V"; */
+"18u-Zx-c8V.normalTitle" = "Terms & Conditions";
+
+/* Class = "UILabel"; text = "Password Error"; ObjectID = "88Z-Da-Lqc"; */
+"88Z-Da-Lqc.text" = "Password Error";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "BBh-tb-oYc"; */
+"BBh-tb-oYc.title" = "Item";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "DER-gk-uyP"; */
+"DER-gk-uyP.text" = "Password";
+
+/* Class = "UILabel"; text = "Don’t have an account? "; ObjectID = "Mmo-6g-9Ui"; */
+"Mmo-6g-9Ui.text" = "Don’t have an account? ";
+
+/* Class = "UITextView"; text = "Paragraph 1\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis quis venenatis, diam leo. Sed bibendum ac dui condimentum consequat tempus vel sit. Lectus sit tristique in nullam vitae sed feugiat. Aliquet diam elit mus viverra. Neque, molestie morbi cursus amet pellentesque aenean posuere nascetur. Eu risus id ultricies est. Ac, faucibus pellentesque ullamcorper amet diam varius interdum.\n\nParagraph 2\nSit in vitae semper egestas sed posuere tellus nisl diam. Ipsum, nisl aenean fusce a, ut cras varius et. Enim egestas tempus velit molestie odio in aliquet. Orci gravida ac faucibus et eu phasellus elit, tellus. Dictum lacinia massa in amet elit. Felis magna et dis adipiscing porttitor sed. Fringilla ante lacus fermentum, ultricies volutpat neque, aliquet. Cras leo, porttitor tellus mi in. Nec volutpat in sed consequat pharetra tristique pulvinar sit. Id commodo tristique tellus in fringilla scelerisque mauris. Mauris quam euismod sit viverra a dictumst arcu sed laoreet. Volutpat bibendum amet diam semper. Nunc tellus eu auctor tellus vivamus a. Euismod orci, ut consequat consectetur praesent quis euismod id.\n\nOrnare quis arcu eget aliquet pretium. Viverra nulla fringilla eget nibh habitasse cras vestibulum amet. Dui luctus dictum leo vulputate tristique lacus. Facilisis facilisi ullamcorper et vitae. Diam molestie sit laoreet lacinia ultrices. Convallis et ipsum quis consectetur sed. Quisque libero lectus quam in leo tincidunt. Venenatis id sodales pellentesque aliquet nibh egestas suspendisse nibh. Hendrerit non mauris, magna malesuada venenatis, eu. Enim, sed metus porttitor amet tortor neque sed."; ObjectID = "Nu7-FN-vuN"; */
+"Nu7-FN-vuN.text" = "Paragraph 1\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis quis venenatis, diam leo. Sed bibendum ac dui condimentum consequat tempus vel sit. Lectus sit tristique in nullam vitae sed feugiat. Aliquet diam elit mus viverra. Neque, molestie morbi cursus amet pellentesque aenean posuere nascetur. Eu risus id ultricies est. Ac, faucibus pellentesque ullamcorper amet diam varius interdum.\n\nParagraph 2\nSit in vitae semper egestas sed posuere tellus nisl diam. Ipsum, nisl aenean fusce a, ut cras varius et. Enim egestas tempus velit molestie odio in aliquet. Orci gravida ac faucibus et eu phasellus elit, tellus. Dictum lacinia massa in amet elit. Felis magna et dis adipiscing porttitor sed. Fringilla ante lacus fermentum, ultricies volutpat neque, aliquet. Cras leo, porttitor tellus mi in. Nec volutpat in sed consequat pharetra tristique pulvinar sit. Id commodo tristique tellus in fringilla scelerisque mauris. Mauris quam euismod sit viverra a dictumst arcu sed laoreet. Volutpat bibendum amet diam semper. Nunc tellus eu auctor tellus vivamus a. Euismod orci, ut consequat consectetur praesent quis euismod id.\n\nOrnare quis arcu eget aliquet pretium. Viverra nulla fringilla eget nibh habitasse cras vestibulum amet. Dui luctus dictum leo vulputate tristique lacus. Facilisis facilisi ullamcorper et vitae. Diam molestie sit laoreet lacinia ultrices. Convallis et ipsum quis consectetur sed. Quisque libero lectus quam in leo tincidunt. Venenatis id sodales pellentesque aliquet nibh egestas suspendisse nibh. Hendrerit non mauris, magna malesuada venenatis, eu. Enim, sed metus porttitor amet tortor neque sed.";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "TG6-w8-mxd"; */
+"TG6-w8-mxd.text" = "Email";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "U2J-7s-8Cb"; */
+"U2J-7s-8Cb.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Re-send"; ObjectID = "UFw-yK-GD9"; */
+"UFw-yK-GD9.normalTitle" = "Re-send";
+
+/* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "Uio-IA-w28"; */
+"Uio-IA-w28.normalTitle" = "Forgot password?";
+
+/* Class = "UILabel"; text = "Email Error"; ObjectID = "VEd-ys-Fu1"; */
+"VEd-ys-Fu1.text" = "Email Error";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "VK2-cc-iPZ"; */
+"VK2-cc-iPZ.normalTitle" = "Register";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "W7a-FA-KEE"; */
+"W7a-FA-KEE.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "Z77-wn-A0j"; */
+"Z77-wn-A0j.normalTitle" = "Reset";
+
+/* Class = "UILabel"; text = "VnExpress"; ObjectID = "aO5-3M-msO"; */
+"aO5-3M-msO.text" = "VnExpress";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "cy3-Jw-k7f"; */
+"cy3-Jw-k7f.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "dFY-5M-aN5"; */
+"dFY-5M-aN5.placeholder" = "Password";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "fUc-7S-h06"; */
+"fUc-7S-h06.title" = "Item";
+
+/* Class = "UILabel"; text = "Didn’t receive an email?"; ObjectID = "g2T-9i-xsl"; */
+"g2T-9i-xsl.text" = "Didn’t receive an email?";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "kSK-uV-Hy4"; */
+"kSK-uV-Hy4.text" = "Password";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "l9i-Ie-z4G"; */
+"l9i-Ie-z4G.text" = "Email";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "pdl-bC-ClH"; */
+"pdl-bC-ClH.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "pfj-PT-j4G"; */
+"pfj-PT-j4G.title" = "Item";
+
+/* Class = "UILabel"; text = "or sign in with"; ObjectID = "syJ-TZ-n27"; */
+"syJ-TZ-n27.text" = "or sign in with";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "vPX-Iw-yiH"; */
+"vPX-Iw-yiH.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "x0k-h0-PRD"; */
+"x0k-h0-PRD.text" = "Email";
+
+/* Class = "UILabel"; text = "or sign in with"; ObjectID = "yNY-AG-Ynp"; */
+"yNY-AG-Ynp.text" = "or sign in with";
